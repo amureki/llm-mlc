@@ -254,7 +254,7 @@ class MlcModel(llm.Model):
     def execute(self, prompt, stream, response, conversation):
         try:
             import mlc_chat
-            from mlc_chat.base import get_delta_message
+            from mlc_chat.callback import _get_delta_message as get_delta_message
             import mlc_chat.chat_module
         except ImportError:
             raise click.ClickException(MLC_INSTALL)
